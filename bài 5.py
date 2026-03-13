@@ -1,40 +1,24 @@
-# Bài 1
-def bai1():
-    print("Chạy bài 1")
+class Product:
+    def __init__(self, price):
+        self._price = price
 
-# Bài 2
-def bai2():
-    print("Chạy bài 2")
+    def get_price(self):
+        return self._price
 
-# Bài 3
-def bai3():
-    print("Chạy bài 3")
+    def set_price(self, price):
+        if price > 0:
+            self._price = price
+        else:
+            print("Giá phải lớn hơn 0")
 
-# Bài 4
-def bai4():
-    print("Chạy bài 4")
+    def __str__(self):
+        return f"Price của product là: {self._price}"
 
+# Tạo đối tượng
+p = Product(100)
 
-while True:
-    print("\n===== MENU =====")
-    print("1. Bài 1")
-    print("2. Bài 2")
-    print("3. Bài 3")
-    print("4. Bài 4")
-    print("5. Thoát")
+# Thay đổi giá
+p.set_price(200)
 
-    choice = input("Chọn chương trình: ")
-
-    if choice == "1":
-        bai1()
-    elif choice == "2":
-        bai2()
-    elif choice == "3":
-        bai3()
-    elif choice == "4":
-        bai4()
-    elif choice == "5":
-        print("Thoát chương trình")
-        break
-    else:
-        print("Lựa chọn không hợp lệ!")
+# In thông tin
+print(p)
